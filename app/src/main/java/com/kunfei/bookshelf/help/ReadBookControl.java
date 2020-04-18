@@ -92,15 +92,15 @@ public class ReadBookControl {
     }
 
     public void updateReaderSettings() {
-        this.hideStatusBar = preferences.getBoolean("hide_status_bar", false);
+        this.hideStatusBar = preferences.getBoolean("hide_status_bar", true);
         this.hideNavigationBar = preferences.getBoolean("hide_navigation_bar", false);
         this.indent = preferences.getInt("indent", 2);
-        this.textSize = preferences.getInt("textSize", 20);
+        this.textSize = preferences.getInt("textSize", 24);
         this.canClickTurn = preferences.getBoolean("canClickTurn", true);
         this.canKeyTurn = preferences.getBoolean("canKeyTurn", true);
         this.readAloudCanKeyTurn = preferences.getBoolean("readAloudCanKeyTurn", false);
-        this.lineMultiplier = preferences.getFloat("lineMultiplier", 1);
-        this.paragraphSize = preferences.getFloat("paragraphSize", 1);
+        this.lineMultiplier = preferences.getFloat("lineMultiplier", 1.7f);
+        this.paragraphSize = preferences.getFloat("paragraphSize", 1.3f);
         this.CPM = preferences.getInt("CPM", defaultCPM) > maxCPM
                 ? minCPM : preferences.getInt("CPM", defaultCPM);
         this.clickAllNext = preferences.getBoolean("clickAllNext", false);
@@ -114,13 +114,13 @@ public class ReadBookControl {
         this.showLine = preferences.getBoolean("showLine", true);
         this.screenTimeOut = preferences.getInt("screenTimeOut", 0);
         this.paddingLeft = preferences.getInt("paddingLeft", DEFAULT_MARGIN_WIDTH);
-        this.paddingTop = preferences.getInt("paddingTop", 0);
+        this.paddingTop = preferences.getInt("paddingTop", 20);
         this.paddingRight = preferences.getInt("paddingRight", DEFAULT_MARGIN_WIDTH);
-        this.paddingBottom = preferences.getInt("paddingBottom", 0);
+        this.paddingBottom = preferences.getInt("paddingBottom", 5);
         this.tipPaddingLeft = preferences.getInt("tipPaddingLeft", DEFAULT_MARGIN_WIDTH);
-        this.tipPaddingTop = preferences.getInt("tipPaddingTop", 0);
+        this.tipPaddingTop = preferences.getInt("tipPaddingTop", 30);
         this.tipPaddingRight = preferences.getInt("tipPaddingRight", DEFAULT_MARGIN_WIDTH);
-        this.tipPaddingBottom = preferences.getInt("tipPaddingBottom", 0);
+        this.tipPaddingBottom = preferences.getInt("tipPaddingBottom", 20);
         this.pageMode = preferences.getInt("pageMode", 0);
         this.screenDirection = preferences.getInt("screenDirection", 0);
         this.navBarColor = preferences.getInt("navBarColorInt", 0);
@@ -162,9 +162,9 @@ public class ReadBookControl {
             textDrawable.add(temp4);
 
             Map<String, Integer> temp5 = new HashMap<>();
-            temp5.put("textColor", Color.parseColor("#808080"));
+            temp5.put("textColor", Color.parseColor("#535353"));
             temp5.put("bgIsColor", 1);
-            temp5.put("textBackground", Color.parseColor("#000000"));
+            temp5.put("textBackground", Color.parseColor("#0D0D0D"));
             temp5.put("darkStatusIcon", 0);
             textDrawable.add(temp5);
         }
@@ -585,7 +585,7 @@ public class ReadBookControl {
     }
 
     public Boolean getToLh() {
-        return preferences.getBoolean("toLh", false);
+        return preferences.getBoolean("toLh", true);
     }
 
     public void setToLh(Boolean toLh) {
